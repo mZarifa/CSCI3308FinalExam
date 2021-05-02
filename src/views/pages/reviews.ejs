@@ -1,0 +1,36 @@
+<%- include('../partials/menu'); -%>
+<div class="container">
+	<br>
+	<div class="jumbotron">
+		<h1 class="display-4">Review Page</h1>
+	</div>
+	<br>
+</div>
+
+
+<div class="container">
+<form action="/artist_searcher" method="get">
+<div class="input-group mb-3">
+	<input type="search" name = "artist_search" id="artist_serach" class="form-control" placeholder="Search for an artist">
+	<div class="input-group-append">
+		<button class="btn btn-primary btn-block" type="submit">Search </button>
+	</form>
+	</div>
+</div>
+	
+</div>
+<div class="container">
+	<table class="table table-bordered" id="stats_table">
+		<tr>
+			<th class="align-bottom" rowspan="2">Artist</th>
+			<th class="align-bottom" rowspan="2">Review </th>
+			<th class="text-center" rowspan="2">Review Date</th>
+		</tr>
+		</tbody>
+		<% if (data) { var table='' ; data.forEach(function(item){ table +='<tr> <td>' + item.artist_name
+			+ '</td> <td>' + item.review_text + '</td> <td>' + item.review_date + '</td> <td>' + '</td>' ; }); %>
+			<%- table %>
+			<% } %>
+		</tbody>
+	</table>
+</div>
